@@ -10,8 +10,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: '[name].[contenthash].js',
-        publicPath: './dist'
+        filename: '[name].[contenthash].js'
     },
     module: {
         rules: [
@@ -28,12 +27,17 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+                test: /\.(jpg|png|svg)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: 'img/[name].[ext]'
+                    }
+                }
             },
             {
-                test: /\.(jpg|png|mp4)$/,
-                use: ['file-loader']
+                test: /\.scss$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             }
         ]
     },
