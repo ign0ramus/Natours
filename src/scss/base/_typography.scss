@@ -32,3 +32,59 @@ body {
         animation: moveInRight 1s ease-out;
     }
 }
+
+.heading-secondary {
+    display: inline-block;
+
+    position: relative;
+
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+
+    transition: transform .5s;
+
+    &::after {
+        content: '';
+        display: inline-block;
+
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+
+        height: 2px;
+        width: 100%;
+        background-color: rgba($color-primary, .8);
+        opacity: 0;
+
+        transition: all .5s;
+    }
+    &:hover {
+        transform: translateY(-.5rem);
+
+        &::after {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+        }
+    }
+}
+
+.heading-tertiary {
+    font-size: $font-size-default;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: $font-size-default;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
