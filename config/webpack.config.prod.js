@@ -28,12 +28,27 @@ module.exports = {
             },
             {
                 test: /\.(jpg|png|svg)$/,
+                exclude: /fonts/,
                 use: {
                     loader: 'file-loader',
                     options: {
                         name: 'img/[name].[ext]'
                     }
                 }
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|svg)$/,
+                exclude: /img/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: 'fonts/[name].[ext]'
+                    }
+                }
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader']
             },
             {
                 test: /\.scss$/,
