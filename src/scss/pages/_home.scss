@@ -4,12 +4,8 @@
     margin-top: -20vh;
 
     &__info {
-        display: grid;
+        @include gridSectionsLayout;
         grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-        grid-gap: $gutter-horizontal $gutter-vertical;
-
-        max-width: 114rem;
-        margin: 0 auto;
     }
 }
 
@@ -23,15 +19,22 @@
     transform: skewY(-7deg);
 
     &__container {
-        display: grid;
+        @include gridSectionsLayout;
         grid-template-columns: repeat(4, minmax(20rem, 1fr));
-        grid-gap: $gutter-horizontal $gutter-vertical;
-
-        max-width: 114rem;
-        margin: 0 auto;
     }
 
     & > * {
         transform: skewY(7deg);
+    }
+}
+
+.section-tours {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0 15rem 0;
+    margin-top: -9rem;
+
+    &__container {
+        @include gridSectionsLayout;
+        grid-template-columns: repeat(3, minmax(30rem, 1fr));
     }
 }

@@ -1,0 +1,6 @@
+@mixin gridSectionsLayout {
+    display: grid;
+    grid-gap: $gutter-horizontal $gutter-vertical;
+    max-width: 114rem;
+    margin: 0 auto;
+}
