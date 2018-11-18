@@ -1,0 +1,56 @@
+.story {
+    width: 75%;
+    padding: 6rem;
+    padding-left: 9rem;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, .1);
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    font-size: $font-size-default;
+    transform: skewX(-12deg);
+
+    &__shape {
+        position: relative;
+
+        float: left;
+        width: 15rem;
+        height: 15rem;
+        clip-path: circle(50% at 50% 50%);
+        transform: skewX(12deg) translateX(-3rem);
+    }
+
+    & > *:not(:first-child) {
+        transform: skewX(12deg);
+    }
+
+    &__image {
+        height: 100%;
+        transform: translateX(-4rem) scale(1.2);
+        transition: transform .4s;
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, 20%);
+        opacity: 0;
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: $font-size-default;
+        text-align: center;
+
+        transition: all .3s;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__image {
+        transform: translateX(-4rem);
+        filter: blur(3px) brightness(80%);
+    }
+}
