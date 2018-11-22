@@ -9,6 +9,12 @@
     font-size: $font-size-default;
     transform: skewX(-12deg);
 
+    @include respond(phone) {
+        width: 90%;
+        padding: 3rem;
+        transform: skewX(0);
+    }
+
     &__shape {
         position: relative;
 
@@ -17,10 +23,19 @@
         height: 15rem;
         clip-path: circle(50% at 50% 50%);
         transform: skewX(12deg) translateX(-3rem);
+
+        @include respond(phone) {
+            transform: skewX(0) translateX(0rem);
+            float: none;
+            margin: 0 auto 2rem;
+        }
     }
 
     & > *:not(:first-child) {
         transform: skewX(12deg);
+        @include respond(phone) {
+            transform: skewX(0);
+        }
     }
 
     &__image {

@@ -1,6 +1,40 @@
 @mixin gridSectionsLayout {
     display: grid;
     grid-gap: $gutter-horizontal $gutter-vertical;
-    max-width: 114rem;
+    max-width: $grid-width;
     margin: 0 auto;
+
+    @include respond(tab) {
+        max-width: $grid-width-small;
+    }
+}
+
+
+
+
+
+// MEDIA QUERY
+/*
+0 - 600px - phone
+601 - 900px - tablet
+901 - 1200px - tabland
+
+1201 - 1800 - normal
+
+1801px + - big desktop
+*/
+
+@mixin respond ($size) {
+    @if $size == phone {
+        @media only screen and (max-width: 37.5em) { @content };//600px
+    } 
+    @if $size == tab {
+        @media only screen and (max-width: 56.25em) { @content };//900
+    }
+    @if $size == tabland {
+        @media only screen and (max-width: 75em) { @content };//1200
+    }
+    @if $size == desktop {
+        @media only screen and (min-width: 112.5em) { @content };//1800
+    }
 }

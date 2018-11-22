@@ -3,9 +3,24 @@
     padding: 25rem 0;
     margin-top: -20vh;
 
+    @include respond(phone) {
+        padding: 15rem 0;
+    }
+
     &__info {
         @include gridSectionsLayout;
         grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+
+        @include respond(tab) {
+            grid-template-columns: repeat(1, 100%);
+        }
+        @include respond(tabland) {
+            grid-gap: $gutter-horizontal-small $gutter-vertical-small;
+        }
+    }
+
+    &__left, &__right {
+        padding: 2rem;
     }
 }
 
@@ -18,9 +33,23 @@
     background-size: cover;
     transform: skewY(-7deg);
 
+    @include respond(tab) {
+        padding: 15rem 0;
+    }
+    @include respond(phone) {
+        padding: 10rem 0;
+    }
+
     &__container {
         @include gridSectionsLayout;
-        grid-template-columns: repeat(4, minmax(20rem, 1fr));
+        grid-template-columns: repeat(4, minmax(19rem, 1fr));
+        @include respond(tabland) {
+            grid-gap: $gutter-horizontal-small $gutter-vertical-small;
+        }
+        @include respond(tab) {
+            grid-template-columns: repeat(1, 100%);
+        }
+        
     }
 
     & > * {
@@ -33,9 +62,22 @@
     padding: 25rem 0 7.5rem 0;
     margin-top: -9rem;
 
+    @include respond(tab) {
+        padding: 15rem 0;
+    }
+    @include respond(phone) {
+        padding: 10rem 0;
+    }
+
     &__container {
         @include gridSectionsLayout;
-        grid-template-columns: repeat(3, minmax(30rem, 1fr));
+        grid-template-columns: repeat(3, minmax(25rem, 1fr));
+        @include respond(tab) {
+            grid-template-columns: repeat(1, 100%);
+        }
+        @include respond(tabland) {
+            grid-gap: $gutter-horizontal-small $gutter-vertical-small;
+        }
     }
 }
 
@@ -43,6 +85,13 @@
     position: relative;
 
     padding: 7.5rem 0;
+
+    @include respond(tab) {
+        padding: 5rem 0;
+    }
+    @include respond(phone) {
+        padding: 2.5rem 0;
+    }
 
     &__container {
         max-width: 114rem;
@@ -55,6 +104,13 @@
 .section-book {
     padding: 15rem 0;
     background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+    @include respond(tab) {
+        padding: 10rem 0;
+    }
+    @include respond(phone) {
+        padding: 7.5rem 0;
+    }
 }
 
 .book {
@@ -70,8 +126,33 @@
 
     height: 50rem;
 
+    @include respond(tab) {
+        width: 90%;
+        background-image: linear-gradient(105deg, 
+                    rgba($color-white, .8), 
+                    rgba($color-white, .7)),
+                    url(../img/nat-10.jpg);
+        display: flex;
+        justify-content: center;
+    }
+
     &__form {
         width: 50%;
         padding: 6rem;
+
+        @include respond(tabland) {
+            padding: 3rem;
+        }
+
+        @include respond(tab) {
+            width: 80%;
+            padding: 0;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+            padding: 0;
+        }
     }
+    
 }
