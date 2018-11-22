@@ -37,7 +37,7 @@
                 <span class="heading-primary--sub">is where life happens</span>
             </h1>
 
-            <a href="#" class="btn btn--white btn--animated">Discover our tours</a>
+            <a href="#section-tour" class="btn btn--white btn--animated">Discover our tours</a>
         </div>
     </header>
 
@@ -107,7 +107,7 @@
             </div>
         </section>
 
-        <section class="section-tours">
+        <section class="section-tours" id="section-tour">
             <div class="u-center-text u-margin-bottom-big">
                 <h2 class="heading-secondary">Popular tours</h2>
             </div>
@@ -135,7 +135,7 @@
                                 <p class="card__price-only">Only</p>
                                 <p class="card__price-value">$297</p>
                             </div>
-                            <a href="#" class="btn btn--white">Book now</a>
+                            <a href="#modal" class="btn btn--white">Book now</a>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                                 <p class="card__price-value">$497</p>
                             </div>
 
-                            <a href="#" class="btn btn--white">Book now</a>
+                            <a href="#modal" class="btn btn--white">Book now</a>
                         </div>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
                                 <p class="card__price-only">Only</p>
                                 <p class="card__price-value">$897</p>
                             </div>
-                            <a href="#" class="btn btn--white">Book now</a>
+                            <a href="#modal" class="btn btn--white">Book now</a>
                         </div>
                     </div>
                 </div>
@@ -302,8 +302,24 @@
             </div>
         </div>
         <p class="footer__copyright u-margin-top-big">
-                Designed by Jonas Schmedtmann.
-            </p>
+            Designed by Jonas Schmedtmann.
+        </p>
+
+        <div class="popup d-flex-center" id="modal">
+            <div class="popup__content">
+                <a href="#section-tour" class="popup__close">&times;</a>
+                <div class="popup__left">
+                    <img src="<%=require('./img/nat-8.jpg')%>" alt="Tour photo" class="popup__img">
+                    <img src="<%=require('./img/nat-9.jpg')%>" alt="Tour photo" class="popup__img">
+                </div>
+                <div class="popup__right">
+                    <h2 class="heading-secondary u-margin-bottom-small">Book now!</h2>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Lorem ipsum dolor sit amet consectetur adipisicing.</h3>
+                    <p class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ipsam quaerat recusandae praesentium nobis modi ducimus. Accusamus dolores veniam non? Possimus quia culpa minus dicta, aliquam repellendus, hic saepe similique voluptatibus accusamus ea illo? Non voluptatum distinctio delectus beatae aperiam perspiciatis quibusdam quam dolore tempore doloremque sunt eum quo voluptates eveniet rerum, aliquam veritatis illum maiores quis asperiores officia temporibus molestiae. Nemo, sunt est velit possimus autem optio architecto omnis, suscipit, deserunt molestiae quibusdam! Repellat ut quo possimus neque quas quod architecto enim cum asperiores quis culpa dolore sint impedit doloribus ad, maiores ipsa nam tenetur commodi velit. Voluptatum, vel.</p>
+                    <a href="#" class="btn btn--green">Book now</a>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
