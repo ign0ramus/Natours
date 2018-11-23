@@ -67,9 +67,12 @@
 
                 <div class="section-about__right">
                     <div class="composition">
-                        <img src="<%=require('./img/nat-1-large.jpg')%>" alt="Image 1" class="composition__img composition__img--photo-1">
-                        <img src="<%=require('./img/nat-2-large.jpg')%>" alt="Image 2" class="composition__img composition__img--photo-2">
-                        <img src="<%=require('./img/nat-3-large.jpg')%>" alt="Image 3" class="composition__img composition__img--photo-3">
+                        <img srcset="<%=require('./img/nat-1.jpg')%> 300w, <%=require('./img/nat-1-large.jpg')%> 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Image 1" class="composition__img composition__img--photo-1" src="<%=require('./img/nat-1-large.jpg')%>">
+
+                        <img srcset="<%=require('./img/nat-2.jpg')%> 300w, <%=require('./img/nat-2-large.jpg')%> 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Image 2" class="composition__img composition__img--photo-2" src="<%=require('./img/nat-2-large.jpg')%>">
+
+                        <img srcset="<%=require('./img/nat-3.jpg')%> 300w, <%=require('./img/nat-3-large.jpg')%> 1000w" sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px" alt="Image 3" class="composition__img composition__img--photo-3" src="<%=require('./img/nat-3-large.jpg')%>">
+
                     </div>
                 </div>
             </div>
@@ -288,7 +291,10 @@
 
     <footer class="footer">
         <div class="footer__logo-box u-margin-bottom-small">
-            <img src="<%=require('./img/logo-green-2x.png')%>" alt="" class="footer__logo">
+            <picture class="footer__logo">
+                <source srcset="<%=require('./img/logo-green-small-1x.png')%> 1x, <%=require('./img/logo-green-2x.png')%> 2x" media="(max-width: 37.5em)"> 
+                <img srcset="<%=require('./img/logo-green-1x.png')%> 1x, <%=require('./img/logo-green-2x.png')%> 2x" alt="Logo" src="<%=require('./img/logo-green-2x.png')%>">
+            </picture>
         </div>
         <div class="footer__container">
             <div class="footer__navigation">
