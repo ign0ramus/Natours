@@ -2,9 +2,19 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Autoprefixer = require('autoprefixer');
+
+const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     mode: 'production',
+    optimization: {
+        minimizer: [
+            new UglifyjsWebpackPlugin({}),
+            new OptimizeCssAssetsWebpackPlugin({})
+        ]
+    },
     entry: {
         main: './src/index.js'
     },
@@ -52,7 +62,16 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 
+                {
+                    loader: 'postcss-loader',
+                    options: {
+                        plugins: [
+                            Autoprefixer()
+                        ],
+                        sourceMap: true,
+                    }
+                }, 'sass-loader']
             }
         ]
     },
